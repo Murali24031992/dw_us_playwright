@@ -10,5 +10,11 @@ test('Radio and Checkbox', async ({ page }) => {
 await page.locator('#radio-yes-1').check();
 await expect(page.locator('#radio-yes-1')).toBeChecked();
 
+//Test Case 2: Verify selecting another radio deselects the previous one
+await page.locator('#radio-no-1').check();
+await expect(page.locator('#radio-yes-1')).not.toBeChecked();
+await expect(page.locator('#radio-no-1')).toBeChecked();
+await page.pause();
+
 
 });
