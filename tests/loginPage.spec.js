@@ -2,10 +2,10 @@ import { test, expect } from '@playwright/test';
 const { readLoginDetails } = require('../utils/excelReader');
 
 test('Login Page with data from excel sheet', async ({ page }) => {
-  const loginDetails = readLoginDetails();
+  const loginDetails = await readLoginDetails();
   
   await page.goto('https://practicetestautomation.com/practice-test-login/');
-await page.pause(); // Pause to inspect the page before filling in the form
+// Pause to inspect the page before filling in the form
   await page.locator('#username').fill(loginDetails.username);
   await page.locator('#password').fill(loginDetails.password);
   await page.locator('#submit').click();
