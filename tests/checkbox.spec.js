@@ -55,7 +55,7 @@ await expect(page.locator('id=radio-bug-yes')).toBeChecked();
 await page.locator('[data-testid="checkbox-remember-me"]').focus();
 await page.keyboard.press('Space');
 await expect(page.locator('[data-testid="checkbox-remember-me"]')).not.toBeChecked();
-// await page.pause();
+
 
 //TC11: Verify disabled radio button cannot be selected
 await expect(page.locator('data-testid=radio-maybe')).toBeDisabled();
