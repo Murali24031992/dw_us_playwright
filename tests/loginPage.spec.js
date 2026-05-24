@@ -20,4 +20,24 @@ test('Login Page with data from excel sheet', async ({ page }) => {
 
   // Verify Log out button is displayed on the new page
   await expect(page.locator('a:has-text("Log out")')).toBeVisible();
+
+  //Test case 2: Negative username test
+  await page.goto('https://practicetestautomation.com/practice-test-login/');
+  await page.locator('#username').fill('Master');
+  await page.locator('#password').fill('Password123');
+  await page.locator('#submit').click();
+
+// Verify error message is displayed for invalid username
+  await expect(page.locator('#error')).toBeVisible();
+  await expect(page.locator('#error')).toHaveText('Your username is invalid!');
+
+  // Test case 3: Negative password test
+  await page.goto('https://practicetestautomation.com/practice-test-login/');
+  await page.locator('#username').fill('student');
+  await page.locator('#password').fill('Master123');
+  await page.locator('#submit').click();
+
+  // Verify error message is displayed for invalid password
+  await expect(page.locator('#error')).toBeVisible();
+  await expect(page.locator('#error')).toHaveText('Your password is invalid!');
 });
