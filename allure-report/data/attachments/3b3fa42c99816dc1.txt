@@ -1,0 +1,1 @@
+Created user: { id: 0, userName: 'autouser_playwright', password: 'Pass@123' }
