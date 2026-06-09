@@ -1,6 +1,6 @@
 import { test, expect } from '@playwright/test';
 
-test.skip('API Testing', async ({ request }) => {
+test('API Testing', async ({ request }) => {
   const response = await request.get('https://fakerestapi.azurewebsites.net/api/v1/Activities/');
 
   expect(response.status()).toBe(200);
@@ -22,7 +22,7 @@ test('API Testing for users', async ({ request }) => {
   expect(data.length).toBeGreaterThan(0);
 });
 
-test.only('API POST Users', async ({ request }) => {
+test('API POST Users', async ({ request }) => {
   const payload = {
     id: 0,
     userName: 'autouser_playwright',
