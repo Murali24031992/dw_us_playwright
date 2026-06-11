@@ -3,11 +3,14 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
-  "scripts": {},
+  "scripts": {
+    "test:login-bdd": "cucumber-js --require tests/support/hooks.js --require tests/stepDefinitions/**/*.js features/**/*.feature"
+  },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "devDependencies": {
+    "@cucumber/cucumber": "^11.0.0",
     "@playwright/test": "^1.60.0",
     "@types/node": "^25.6.0"
   },

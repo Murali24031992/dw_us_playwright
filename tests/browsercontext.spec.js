@@ -8,8 +8,10 @@ const loginDetails = await readLoginDetails();
 
 await page.goto('https://practicetestautomation.com/practice-test-login/');
 // Pause to inspect the page before filling in the form
-  await page.locator('#username').fill(loginDetails.username);
-  await page.locator('#password').fill(loginDetails.password);
+  const userName=page.locator('#username')
+  await userName.fill(loginDetails.username);
+  const password=page.locator('#password');
+  await password.fill(loginDetails.password);
   await page.locator('#submit').click();
   await context.close();
 });
